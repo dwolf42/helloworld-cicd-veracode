@@ -4,7 +4,8 @@ variables:
 image: maven:latest
 
 stages:
-  -build
+  - build
+  - test
 
 cache:
   paths:
