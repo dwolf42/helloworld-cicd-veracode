@@ -22,11 +22,13 @@ image: maven:3.9.5-amazoncorretto-17
 
 compile_job:
   stage: compile
+  script:
     - echo "Maven compile started"
     - mvn $MAVEN_CLI_OPTS clean compile
 
 validate_job:
   stage: validate
+  script:
     - echo "Maven validation started"
     - mvn $MAVEN_CLI_OPTS validate
 
