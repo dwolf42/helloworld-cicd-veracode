@@ -23,8 +23,8 @@ build_job:
 #    - "mvn install"
 #    - echo "Maven compile started"
 #    - "mvn compile"
-    - echo "Maven clean install started"
-    - "mvn clean install"
+    - echo "Maven clean package started"
+    - "mvn clean package"
 
 
 #test-job1:
