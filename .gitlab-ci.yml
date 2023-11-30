@@ -15,9 +15,9 @@ cache:
     - .m2/repository
     - target
 
-build_job:
-  stage: build
-
+#build_job:
+#  stage: build
+build:
   script:
     - echo "Maven compile started"
     - "mvn compile"
