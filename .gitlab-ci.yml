@@ -1,15 +1,16 @@
 variables:
   MAVEN_OPTS: -Dmaven.repo.local=.m2/repository
+  APP_NAME: "helloword-cicd by David"
 
 image: maven:latest
 
 stages:
   - build
-  - test
+#  - test
 
 cache:
   paths:
-    - .m2/repositroy
+    - .m2/repository
     - target
 
 build_job:
