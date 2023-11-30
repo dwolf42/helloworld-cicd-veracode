@@ -28,6 +28,7 @@ stages:
 build_job:
   stage: build
   script:
+    - "mvn install"
     - echo "Maven compile started"
     - "mvn compile"
 
