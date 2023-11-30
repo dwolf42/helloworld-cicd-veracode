@@ -19,9 +19,11 @@ image: maven:latest
 build_job:
   stage: build
   script:
+    - echo "Maven install started"
     - "mvn install"
     - echo "Maven compile started"
     - "mvn compile"
+    - "mvn clean install"
 
 
 #test-job1:
