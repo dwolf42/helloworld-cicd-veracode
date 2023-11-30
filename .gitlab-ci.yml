@@ -1,7 +1,23 @@
 variables:
   MAVEN_OPTS: >-
-      -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
+    -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
   APP_NAME: "helloword-cicd by David"
+
+# Cache downloaded dependencies and plugins between builds.
+# To keep cache across branches add 'key: "$CI_JOB_NAME"'
+cache:
+  paths:
+    - .m2/repository
+
+# This will only validate and compile stuff and run e.g. maven-enforcer-plugin.
+# Because some enforcer rules might check dependency convergence and class duplications
+# we use `test-compile` here instead of `validate`, so the correct classpath is picked up.
+.validate: &validate
+  stage: build
+  script:
+    - 'mvn $MAVEN_CLI_OPTS test-compile'
+
+
 
 image: maven:latest
 
@@ -9,10 +25,7 @@ stages:
   - build
 #  - test
 
-cache:
-  paths:
-    - .m2/repository
-    - target
+
 
 build_job:
   stage: build
