@@ -17,7 +17,7 @@ cache:
   script:
     - 'mvn $MAVEN_CLI_OPTS test-compile'
 
-image: maven:3-jdk-17
+image: maven:latest
 
 stages:
   - build
