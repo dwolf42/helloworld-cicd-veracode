@@ -1,6 +1,9 @@
 stages:
+  - validate
+  - compile
   - test
-  - build
+  - package
+  - verify
 
 variables:
   MAVEN_OPTS: >-
@@ -17,16 +20,30 @@ cache:
 # Download and use latest maven and jdk 17 Docker image
 image: maven:3.9.5-amazoncorretto-17
 
+compile_job:
+  stage: compile
+    - echo "Maven compile started"
+    - mvn $MAVEN_CLI_OPTS clean compile
 
+validate_job:
+  stage: validate
+    - echo "Maven validation started"
+    - mvn $MAVEN_CLI_OPTS validate
 
-test_job-unit-test:
+test_job:
   stage: test
   script:
     - echo "This job1 unit tests"
     - mvn $MAVEN_CLI_OPTS test
 
-build_job:
-  stage: build
+package_job:
+  stage: package
   script:
-    - echo "Maven clean package started"
-    - mvn clean package
+    - echo "Maven package started"
+    - mvn $MAVEN_CLI_OPTS package
+
+verify_job:
+  stage: verify
+  script:
+    - echo "Maven verify started"
+    - mvn $MAVEN_CLI_OPTS verify
