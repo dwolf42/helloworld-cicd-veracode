@@ -6,8 +6,8 @@ variables:
 
 image: maven:latest
 
-#stages:
-#  - build
+stages:
+  - build
 #  - test
 
 cache:
@@ -15,9 +15,8 @@ cache:
     - .m2/repository
     - target
 
-#build_job:
-#  stage: build
-build:
+build_job:
+  stage: build
   script:
     - echo "Maven compile started"
     - "mvn compile"
