@@ -12,6 +12,7 @@ variables:
 cache:
   paths:
     - .m2/repository
+    - target
 
 # This will only validate and compile stuff and run e.g. maven-enforcer-plugin.
 # Because some enforcer rules might check dependency convergence and class duplications
