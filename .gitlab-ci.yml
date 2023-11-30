@@ -27,4 +27,4 @@ test_job-unit-test:
   stage: test
   script:
     - echo "This job1 unit tests"
-    - mvn test
+    - mvn $MAVEN_CLI_OPTS test
