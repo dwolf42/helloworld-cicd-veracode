@@ -1,6 +1,6 @@
 stages:
-  - build
   - test
+  - build
 
 variables:
   MAVEN_OPTS: >-
@@ -17,14 +17,16 @@ cache:
 # Download and use latest maven and jdk 17 Docker image
 image: maven:3.9.5-amazoncorretto-17
 
-build_job:
-  stage: build
-  script:
-    - echo "Maven clean package started"
-    - mvn clean package
+
 
 test_job-unit-test:
   stage: test
   script:
     - echo "This job1 unit tests"
     - mvn $MAVEN_CLI_OPTS test
+
+build_job:
+  stage: build
+  script:
+    - echo "Maven clean package started"
+    - mvn clean package
