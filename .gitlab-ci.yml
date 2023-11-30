@@ -14,17 +14,17 @@ cache:
     - .m2/repository
     - target
 
+# Download and use latest maven and jdk 17 Docker image
 image: maven:3.9.5-amazoncorretto-17
 
 build_job:
   stage: build
   script:
     - echo "Maven clean package started"
-    - "mvn clean package"
+    - mvn clean package
 
-
-test-job1:
+test_job-unit-test:
   stage: test
   script:
-    - echo "This job tests something"
+    - echo "This job1 unit tests"
     - mvn test
