@@ -7,7 +7,7 @@ class HelloWorldTest {
 
     @Test
     void mainUnterTest() {
-        Assertions.assertEquals("Hello, World!", HelloWorld.sayHello("World"));
+        Assertions.assertEquals("Hello, Wor1ld!", HelloWorld.sayHello("World"));
         Assertions.assertNotEquals("Hello, Jupiter", HelloWorld.sayHello("Pluto"));
     }
 }
