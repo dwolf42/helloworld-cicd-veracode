@@ -25,7 +25,7 @@ stages:
 
 
 
-build_job:
+build_jobsdfg:
   stage: build
   script:
     - "mvn install"
