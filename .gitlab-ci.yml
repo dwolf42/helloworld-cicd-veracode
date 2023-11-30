@@ -6,8 +6,8 @@ variables:
 
 image: maven:latest
 
-stages:
-  - build
+#stages:
+#  - build
 #  - test
 
 cache:
