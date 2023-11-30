@@ -12,14 +12,12 @@ cache:
 # This will only validate and compile stuff and run e.g. maven-enforcer-plugin.
 # Because some enforcer rules might check dependency convergence and class duplications
 # we use `test-compile` here instead of `validate`, so the correct classpath is picked up.
-.validate: &validate
+.validate:
   stage: build
   script:
     - 'mvn $MAVEN_CLI_OPTS test-compile'
 
-
-
-image: maven:latest
+image: maven:latest-openjdk-17
 
 stages:
   - build
