@@ -8,7 +8,7 @@ variables:
 stages:
   - build
   - test
-  - veracode
+  - analysis
 
 cache:
   paths:
@@ -30,7 +30,7 @@ Unit Test:
       junit:
         - target/surefire-reports/TEST-*.xml
 
-SCA_scan:
-  stage: veracode
+Veracode-SCA:
+  stage: analysis
   script:
     - curl -sSL https://download.sourceclear.com/ci.sh | sh
