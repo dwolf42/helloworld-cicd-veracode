@@ -8,6 +8,7 @@ variables:
 stages:
   - build
   - test
+  - scan
 
 cache:
   paths:
@@ -28,5 +29,8 @@ Unit Test:
     reports:
       junit:
         - target/surefire-reports/TEST-*.xml
-  after_script:
+
+SCA_scan:
+  stage: scan
+  script:
     - curl -sSL https://download.sourceclear.com/ci.sh | sh
