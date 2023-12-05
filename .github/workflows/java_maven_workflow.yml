@@ -54,5 +54,8 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
 
+      - name: Directory
+        run: ls -al
+
       - name: Run Maven with tests
         run: mvn -B test --file pom.xml
