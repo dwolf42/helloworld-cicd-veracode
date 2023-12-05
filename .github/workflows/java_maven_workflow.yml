@@ -35,6 +35,7 @@ jobs:
         run: mvn --batch-mode package --file pom.xml -DskipTests
 
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
