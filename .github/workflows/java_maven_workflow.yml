@@ -47,9 +47,11 @@ jobs:
           distribution: 'corretto'
           architecture: x64
 
-      - name: Test with Maven
-        #        uses: actions/cache@v4
+      - name: Cache Maven packages
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+
+      - name: Run Maven with tests
         run: mvn --batch-mode test -B --file pom.xml
