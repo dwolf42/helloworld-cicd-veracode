@@ -1,5 +1,4 @@
-package de.ktc;
-
+import de.ktc.HelloWorld;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
