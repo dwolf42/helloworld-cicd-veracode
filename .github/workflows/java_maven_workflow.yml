@@ -23,8 +23,12 @@ jobs:
           java-version: '17'
           distribution: 'corretto'
           architecture: x64
-          cache: maven
+
       - name: Build with Maven
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         run: mvn --batch-mode package --file pom.xml -DskipTests
 
   test:
@@ -37,6 +41,10 @@ jobs:
           java-version: '17'
           distribution: 'corretto'
           architecture: x64
-          cache: maven
+
       - name: Test with Maven
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         run: mvn --batch-mode test -B --file pom.xml
