@@ -55,4 +55,4 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
 
       - name: Run Maven with tests
-        run: mvn --batch-mode clean package test --file pom.xml
+        run: mvn --batch-mode clean test --file pom.xml
