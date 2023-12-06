@@ -55,7 +55,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
 
       - name: Run Maven with tests
-        run: mvn -B clean package test --file pom.xml
+        run: mvn -B clean test --file pom.xml
 
   Veracode_SCA_SCAN:
     needs: test
