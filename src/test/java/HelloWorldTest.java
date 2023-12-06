@@ -1,7 +1,7 @@
 import de.ktc.HelloWorld;
 import org.junit.jupiter.api.Assertions;
 
-class Test {
+class HelloWorldTest {
 
     @org.junit.jupiter.api.Test
     void mainUnterTest() {
