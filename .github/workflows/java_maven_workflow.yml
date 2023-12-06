@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
-        run: gradle clean build
+        run: maven clean verify
   pipeline-scan:
     runs-on: ubuntu-latest
     steps:
