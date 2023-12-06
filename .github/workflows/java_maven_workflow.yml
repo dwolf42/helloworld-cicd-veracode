@@ -40,8 +40,8 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-        env:
-          ACTIONS_STEP_DEBUG: '${{ secrets.ACTIONS_STEP_DEBUG }}'
+#        env:
+#          ACTIONS_STEP_DEBUG: '${{ secrets.ACTIONS_STEP_DEBUG }}'
 #          ACTIONS_STEP_DEBUG: true
 
 
@@ -60,7 +60,7 @@ jobs:
 
       - name: Run Maven with tests
 
-        run: mvn -B clean test --file pom.xml
+        run: mvn -X clean test --file pom.xml
 
   Veracode_SCA_SCAN:
     needs: test
