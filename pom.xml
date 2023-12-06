@@ -22,15 +22,6 @@
             <scope>test</scope>
         </dependency>
 
-<!--!!REMOVE BEFORE USAGE, THIS DEPENDENCY IS KNOWN FOR VULNERABILITIES, AND IS ONLY INTEGRATED FOR TESTING PURPOSES!!-->
-        <!-- https://mvnrepository.com/artifact/net.objecthunter/exp4j -->
-        <dependency>
-            <groupId>net.objecthunter</groupId>
-            <artifactId>exp4j</artifactId>
-            <version>0.4.5</version>
-        </dependency>
-
-
     </dependencies>
 
 </project>
