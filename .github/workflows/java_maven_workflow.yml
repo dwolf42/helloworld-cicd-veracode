@@ -14,7 +14,6 @@ on:
 
 jobs:
   build:
-    needs: Veracode_SCA_Scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -59,26 +58,13 @@ jobs:
         run: mvn -B test --file pom.xml
 
   Veracode_SCA_SCAN:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Download Vera
-          uses: wei/curl@master
-          with:
-            args: -fsS https://tools.veracode.com/veracode-cli/install | sh
-        - name: Run a static scan
-          run: ./veracode static scan verademo.war
-          env:
-           VERACODE_API_KEY_ID: ${{ secrets.myVeracodeId }}
-           VERACODE_API_KEY_SECRET: ${{ secrets.myVeracodeSecret }}
-
-#  Veracode_SCA_SCAN:
-#    #        needs: build
-#    name: Veracode SCA Scan
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v4
-#      - name: Run Veracode SCA
-#        env:
-#          SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
-#        uses: veracode/veracode-sca@v2.1.9
+    needs: test
+    name: Veracode SCA Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run Veracode SCA
+        env:
+          SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
+        uses: veracode/veracode-sca@v2.1.9
