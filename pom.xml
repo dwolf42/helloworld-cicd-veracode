@@ -22,7 +22,15 @@
             <scope>test</scope>
         </dependency>
 
-<!--        !!! VULNERABLE DEPENDENCY FOR TESTING PURPOSES, REMOVE BEFORE USEAGE/RELEASE !!!-->
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
+
+        <!--        !!! VULNERABLE DEPENDENCY FOR TESTING PURPOSES, REMOVE BEFORE USEAGE/RELEASE !!!-->
 <!--        !!! VULNERABLE DEPENDENCY FOR TESTING PURPOSES, REMOVE BEFORE USEAGE/RELEASE !!!-->
 <!--        !!! VULNERABLE DEPENDENCY FOR TESTING PURPOSES, REMOVE BEFORE USEAGE/RELEASE !!!-->
 <!--        !!! VULNERABLE DEPENDENCY FOR TESTING PURPOSES, REMOVE BEFORE USEAGE/RELEASE !!!-->
