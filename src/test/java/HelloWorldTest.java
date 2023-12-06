@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 class HelloWorldTest {
 
     @Test
-    void mainUnterTest() {
+    void sayHelloTest() {
         Assertions.assertEquals("Hello, ----World!", HelloWorld.sayHello("World"));
         Assertions.assertNotEquals("Hello, Jupiter", HelloWorld.sayHello("Pluto"));
     }

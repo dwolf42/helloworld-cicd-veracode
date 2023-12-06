@@ -60,7 +60,7 @@ jobs:
 
       - name: Run Maven with tests
 
-        run: mvn -X clean test --file pom.xml
+        run: mvn -X clean package test --file pom.xml
 
   Veracode_SCA_SCAN:
     needs: test
