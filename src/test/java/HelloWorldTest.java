@@ -1,9 +1,10 @@
 import de.ktc.HelloWorld;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 class HelloWorldTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void mainUnterTest() {
         Assertions.assertEquals("Hello, ----World!", HelloWorld.sayHello("World"));
         Assertions.assertNotEquals("Hello, Jupiter", HelloWorld.sayHello("Pluto"));
