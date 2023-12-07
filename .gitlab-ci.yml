@@ -45,9 +45,8 @@ Veracode-SAST:
     paths:
       - results.json
       - veracode_gitlab_vulnerabilities.json
-
     reports:
-    sast: veracode_gitlab_vulnerabilities.json
+      sast: veracode_gitlab_vulnerabilities.json
     expire_in: 1 week
     when: always
     script:
