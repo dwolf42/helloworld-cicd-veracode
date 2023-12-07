@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@v4
 #        env:
 #          ACTIONS_STEP_DEBUG: '${{ secrets.ACTIONS_STEP_DEBUG }}'
-#          ACTIONS_STEP_DEBUG: true
+#          ACTIONS_STEP_DEBUG: true---
 
 
       - name: Set up JDK 17
@@ -60,7 +60,8 @@ jobs:
 
       - name: Run Maven with tests
 
-        run: mvn -X clean package test --file pom.xml
+        run: mvn clean package test
+        #--file pom.xml
 
   Veracode_SCA_SCAN:
     needs: test
