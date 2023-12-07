@@ -1,10 +1,11 @@
-#image: maven:3.9.5-amazoncorretto-17
-image: docker.ktc.local/runner/maven-runner:3.9.2-JDK17
+#image: docker.ktc.local/runner/maven-runner:3.9.2-JDK17
+
+image: maven:3.9.5-amazoncorretto-17
 
 variables:
   MAVEN_OPTS: >-
     -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
-  APP_NAME: "helloword-cicd by David"
+  APP_NAME: "YOUR_PROJECT'S_NAME"
 
 stages:
   - build
@@ -19,17 +20,17 @@ cache:
 Build:
   stage: build
   script:
-    - mvn $MAVEN_CLI_OPTS package -DskipTests
+    - mvn $MAVEN_CLI_OPTS clean package -DskipTests
 
 Unit Test:
   stage: test
   script:
-    - mvn $MAVEN_CLI_OPTS test
-  artifacts:
-    when: always
-    reports:
-      junit:
-        - target/surefire-reports/TEST-*.xml
+    - mvn $MAVEN_CLI_OPTS clean package test
+#  artifacts:
+#    when: always
+#    reports:
+#      junit:
+#        - target/surefire-reports/TEST-*.xml
 
 Veracode-SCA:
   stage: analysis
