@@ -49,6 +49,7 @@ Veracode-SAST:
      sast: veracode_gitlab_vulnerabilities.json
     expire_in: 1 week
     when: always
+  before_script: sudo apt install zip
   script:
     - zip -r helloworld-cicd.zip .
     - curl -O https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
